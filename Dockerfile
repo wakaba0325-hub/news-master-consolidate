@@ -5,7 +5,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends git && \
     rm -rf /var/lib/apt/lists/*
 
 # news-sl はコミット SHA で固定する(マージ後の main の SHA に更新するか --build-arg NEWS_SL_REF=<sha> で上書き)。
-ARG NEWS_SL_REF=c7a2da025e4dd6c4a41d5826939279653194424e
+ARG NEWS_SL_REF=94583c12a0c50fafc1dd44a949a2bc4596c5c333
 
 # gh token は BuildKit secret で受ける(news-sl が public の間は無くても匿名 clone で通る。token は層に残らない)。
 #   docker buildx build --platform linux/amd64 --secret id=gh_token,src=<tokenを書いた一時ファイル> ...
